@@ -438,7 +438,7 @@ div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
     }
     .swiper-container {
         width: 100%;
-        height: 12rem;
+        /* height: 12rem; */
         /* overflow: hidden; */
     }
     .swiper-slide {
