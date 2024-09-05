@@ -454,6 +454,20 @@ div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
 }
 
 @media (max-width: 768px) {
+    .travel-item .travel-thumb {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.travel-carousel {
+    padding: 10px 10px 10px 10px;
+}
     .FF__flex {
         display: inherit;
         justify-content: space-between;
