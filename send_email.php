@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         
         $mail->setFrom('enquiry@safarizilla.in', 'Safari Zilla');
-        $mail->addAddress('Info@safarizilla.in'); 
+        $mail->addAddress('safarizilla.travels@gmail.com'); 
 
         
         $mail->isHTML(true);
