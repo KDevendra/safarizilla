@@ -811,22 +811,24 @@
                 <div class="form-area">
                     <div class="form-inner">
                         <form id="send">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Enter full name" value="" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="number" id="mobile_code" class="form-control" placeholder="Enter phone" name="phone" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Enter email address" name="mail" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Enter message" name="message" />
-                            </div>
-                            <div class="d-flex justify-content-center" style="display: flex; justify-content: center;">
-                                <button type="submit" class="" id="submit-button">Submit</button>
-                            </div>
-                        </form>
+    <div class="form-group">
+        <input type="text" class="form-control" name="name" placeholder="Enter full name" required="required" />
+    </div>
+    <div class="form-group">
+        <input type="number" id="mobile_code" class="form-control" placeholder="Enter phone" name="phone" required="required" />
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" placeholder="Enter email address" name="mail" required="required" />
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter message" name="message" />
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" id="submit-button" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<div id="response-message"></div>
                     </div>
                 </div>
                 <span class="fade-out main-btn-circle close_popup">╳</span>
@@ -921,6 +923,25 @@
                         enableScroll();
                     }, 600);
                 });
+                  $('#send').on('submit', function(e) {
+        e.preventDefault();
+
+        $('#submit-button').html('Loading...').prop('disabled', true);
+
+        $.ajax({
+            url: 'send_email.php',
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function(response) {
+                $('#response-message').html(response);
+                $('#submit-button').html('Submit').prop('disabled', false);
+            },
+            error: function() {
+                $('#response-message').html('<p class="text-danger">An error occurred. Please try again.</p>');
+                $('#submit-button').html('Submit').prop('disabled', false);
+            }
+        });
+    });
                 setTimeout(function () {
                     $(".popup-btn").trigger("click");
                 }, 5000);
