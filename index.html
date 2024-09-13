@@ -879,6 +879,22 @@
                  console.error('Target element "' + target + '" not found.');
               }
            }
+
+      // Disable scroll function
+      function disableScroll() {
+         $('body').css({
+            overflow: 'hidden',
+            height: '100%',
+         });
+      }
+
+      // Enable scroll function
+      function enableScroll() {
+         $('body').css({
+            overflow: '',
+            height: '',
+         });
+      }
            $(".sub-menu a").on("click", function (e) {
               e.preventDefault();
               $(".sub-menu li").removeClass("active");
