@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $email = $_POST['mail'];
+    $no_people = $_POST['no_people'];
+    $travel_date = $_POST['travel_date'];
     $message = $_POST['message'];
 
     $mail = new PHPMailer(true);
@@ -34,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           <b>Name:</b> $name <br>
                           <b>Phone:</b> $phone <br>
                           <b>Email:</b> $email <br>
+                           <b>No. of People:</b> $no_people <br>
+                            <b>Travel Date:</b> $travel_date <br>
                           <b>Message:</b> $message";
 
         $mail->send();

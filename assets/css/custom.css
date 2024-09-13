@@ -88,9 +88,21 @@
 .popup .main-btn-rect {
     padding: 10px 100px;
 }
+.footer-section .footer-shape {
+    background-image: url(../img/shape/footer-top-shape.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    width: 100%;
+    height: 670px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .popup .popup-content {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     max-height: 568px;
     min-width: 400px;
@@ -712,7 +724,7 @@ a.button:hover {
     box-shadow: 0 3px 8px 0 rgb(0 0 0 / 10%);
 }
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .intl-tel-input,
 .iti {
@@ -915,7 +927,7 @@ a.button:hover {
 @media only screen and (max-width: 768px) {
     .popup .popup-content {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         max-height: 568px;
         min-width: 85%;
